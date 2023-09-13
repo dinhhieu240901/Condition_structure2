@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Di chuyển quả bóng</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .button {
+        font-size: 18px;
+        padding: 12px 24px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .button:hover {
+        background-color: #0056b3;
+      }
+
+      .ball {
+        width: 200px;
+        height: 200px;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        id="ball"
+        class="ball"
+        src="https://res.cloudinary.com/moresport/image/upload/a_0,c_fill,f_auto,q_auto:good/v1575961299/uploads/assets/1164577-MULTICOLOR-1-qZG.jpg"
+        alt="Quả bóng"
+      />
+      <button class="button" onclick="moveRight()">Di chuyển sang phải</button>
+    </div>
+    <script>
+      let imgObj; // Biến để lưu ảnh
+
+      function init() {
+        imgObj = document.getElementById("ball");
+        imgObj.style.left = "0px"; // Đặt vị trí ban đầu là 0px
+      }
+
+      function moveRight() {
+        const currentLeft = parseInt(imgObj.style.left, 10);
+        const newPosition = currentLeft + 10; // Tăng khoảng cách trái 10 pixel
+
+        imgObj.style.left = newPosition + "px";
+      }
+
+      window.onload = init; // Gọi hàm init() khi trình duyệt tải lần đầu
+    </script>
+  </body>
+</html>
