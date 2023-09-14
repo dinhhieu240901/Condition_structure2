@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cấu trúc điều kiện 1</title>
+  </head>
+  <body>
+    <input type="text" id="a" placeholder="Nhập điểm bài kiểm tra" />
+    <input type="text" id="b" placeholder="Nhập điểm thi giữa kì" />
+    <input type="text" id="c" placeholder="Nhập điểm thi cuối kì" />
+    <input type="button" onclick="result()" value="Xếp loại" />
+    <p id="Result"></p>
+    <script>
+      function result() {
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let c = +document.getElementById("c").value;
+        let score = (a + b + c) / 3;
+        if (score <= 4) {
+          document.getElementById("Result").innerHTML = "Xếp loại yếu";
+        } else if (score <= 6) {
+          document.getElementById("Result").innerHTML = "Xếp loại trung bình";
+        } else if (score <= 8) {
+          document.getElementById("Result").innerHTML = "Xếp loại khá";
+        } else {
+          document.getElementById("Result").innerHTML = "Xếp loại giỏi";
+        }
+      }
+    </script>
+  </body>
+</html>

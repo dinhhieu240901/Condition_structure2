@@ -82,6 +82,7 @@ function changeImage(id, src) {
     }
     picture3.src = array3[currentPos3];
   }
+  check();
 }
 
 // Hàm kiểm tra xem ba thẻ img có cùng đường dẫn ảnh hay không

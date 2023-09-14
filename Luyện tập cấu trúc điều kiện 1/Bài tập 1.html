@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <input type="number" id="numA" placeholder="Nhập số a" />
+    <input type="number" id="numB" placeholder="Nhập số b" />
+    <button onclick="checkDivisibility()">Kiểm tra</button>
+    <script>
+      function checkDivisibility() {
+        var a = document.getElementById("numA").value;
+        var b = document.getElementById("numB").value;
+        if (a % b == 0) {
+          alert("a chia hết cho b");
+        } else {
+          alert("a không chia hết cho b");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -40,6 +40,8 @@
       .ball {
         width: 200px;
         height: 200px;
+        background-color: #007bff;
+        border-radius: 50%;
         position: relative;
       }
     </style>
@@ -65,7 +67,6 @@
       function moveRight() {
         const currentLeft = parseInt(imgObj.style.left, 10);
         const newPosition = currentLeft + 10; // Tăng khoảng cách trái 10 pixel
-
         imgObj.style.left = newPosition + "px";
       }
 

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do You Love Me?</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #container {
+        text-align: center;
+      }
+
+      #yes-button,
+      #no-button {
+        font-size: 24px;
+        padding: 12px 24px;
+        margin: 10px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+
+      #no-button {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p style="font-size: 40px; padding-left: 120px">Do you love me?</p>
+      <button id="yes-button" onclick="showLove()">YES</button>
+      <button id="no-button" onmouseover="moveNoButton()">NO</button>
+    </div>
+
+    <script>
+      function showLove() {
+        alert("<3");
+      }
+
+      function moveNoButton() {
+        const button = document.getElementById("no-button");
+        const maxHeight = window.innerHeight;
+        const maxWidth = window.innerWidth;
+        const randomY = Math.random() * maxHeight;
+        const randomX = Math.random() * maxWidth;
+        button.style.top = randomY + "px";
+        d;
+        button.style.left = randomX + "px";
+      }
+    </script>
+  </body>
+</html>

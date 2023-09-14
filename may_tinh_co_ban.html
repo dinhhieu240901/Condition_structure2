@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style>
+      .calculator {
+        width: 300px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #f3f3f3;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+      }
+
+      input[type="text"] {
+        width: 250;
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 20px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+      }
+
+      table {
+        width: 100%;
+      }
+
+      table td {
+        padding: 5px;
+      }
+
+      button {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        background-color: #e0e0e0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+      }
+      .button-row td {
+        text-align: center;
+      }
+
+      button.operator {
+        background-color: #f2a900;
+        color: #fff;
+      }
+
+      button:hover {
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" id="result" readonly />
+      <table>
+        <tr>
+          <td class="button-row"><button onclick="clearResult()">C</button></td>
+          <td class="button-row">
+            <button onclick="deleteLastCharacter()">&larr;</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="button-row">
+            <button class="number" onclick="addCharacter('7')">7</button>
+          </td>
+          <td class="button-row">
+            <button class="number" onclick="addCharacter('8')">8</button>
+          </td>
+          <td class="button-row">
+            <button class="number" onclick="addCharacter('9')">9</button>
+          </td>
+          <td class="button-row">
+            <button class="operator" onclick="addCharacter('/')">/</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="button-row">
+            <button class="number" onclick="addCharacter('4')">4</button>
+          </td>
+          <td class="button-row">
+            <button class="number" onclick="addCharacter('5')">5</button>
+          </td>
+          <td class="button-row">
+            <button class="number" onclick="addCharacter('6')">6</button>
+          </td>
+          <td class="button-row">
+            <button class="operator" onclick="addCharacter('*')">*</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="button-row">
+            <button class="number" onclick="addCharacter('1')">1</button>
+          </td>
+          <td class="button-row">
+            <button class="number" onclick="addCharacter('2')">2</button>
+          </td>
+          <td class="button-row">
+            <button class="number" onclick="addCharacter('3')">3</button>
+          </td>
+          <td class="button-row">
+            <button class="operator" onclick="addCharacter('-')">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="button-row">
+            <button class="number" onclick="addCharacter('0')">0</button>
+          </td>
+          <td class="button-row">
+            <button class="operator" onclick="addCharacter('.')">.</button>
+          </td>
+          <td class="button-row">
+            <button class="operator" onclick="calculateResult()">=</button>
+          </td>
+          <td class="button-row">
+            <button class="operator" onclick="addCharacter('+')">+</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      function addCharacter(param) {
+        document.getElementById("result").value += param;
+      }
+
+      function deleteLastCharacter() {
+        var result = document.getElementById("result").value;
+        document.getElementById("result").value = result.slice(0, -1);
+      }
+
+      function clearResult() {
+        document.getElementById("result").value = "";
+      }
+
+      function calculateResult() {
+        var result = document.getElementById("result").value;
+        var calculatedResult = eval(result);
+        document.getElementById("result").value = calculatedResult;
+      }
+    </script>
+  </body>
+</html>

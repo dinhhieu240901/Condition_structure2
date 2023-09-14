@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      padding: 20px;
+    }
+    input {
+      margin: 20px;
+    }
+  </style>
+  <body>
+    <input type="text" name="sothu1" id="sothu1" /> <br />
+    <input type="text" name="sothu2" id="sothu2" />
+    <br />
+    <input type="text" name="sothu3" id="sothu3" />
+    <button onclick="check()">Kiểm tra</button>
+    <span id="result"></span>
+    <script>
+      function check() {
+        // Đặt biến a, b, và c trong hàm để tránh lỗi toàn cục.
+        var a = +document.getElementById("sothu1").value;
+        var b = +document.getElementById("sothu2").value;
+        var c = +document.getElementById("sothu3").value;
+        var max_value = Math.max(a, b, c);
+        document.getElementById("result").innerHTML =
+          "Số lớn nhất là " + max_value;
+      }
+    </script>
+  </body>
+</html>

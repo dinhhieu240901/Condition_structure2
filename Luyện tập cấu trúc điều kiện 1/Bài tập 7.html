@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="minutes" placeholder="Nhập số phút đã gọi" />
+    <input type="button" onclick="calculatePhoneBill()" value="Tính cước" />
+    <p id="Result"></p>
+    <script>
+      function calculatePhoneBill() {
+        let minutes = +document.getElementById("minutes").value;
+        let bill;
+        if (minutes <= 50) {
+          bill = minutes * 1000;
+        } else if (minutes <= 200) {
+          bill = minutes * 800;
+        } else {
+          bill = minutes * 600;
+        }
+        document.getElementById("Result").innerHTML =
+          "Cước điện thoại là: " + bill;
+      }
+    </script>
+  </body>
+</html>

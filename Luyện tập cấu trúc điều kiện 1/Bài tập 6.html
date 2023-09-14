@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="sales" placeholder="Nhập doanh số bán hàng" />
+    <input type="button" onclick="calculateCommission()" value="Tính hoa hồng" />
+    <p id="Result"></p>
+    <script>
+      function calculateCommission() {
+        let sales = +document.getElementById("sales").value;
+        let commission;
+        if (sales <= 1000) {
+          commission = sales * 0.05;
+        } else if (sales <= 5000) {
+          commission = sales * 0.1;
+        } else {
+          commission = sales * 0.2;
+        }
+        document.getElementById("Result").innerHTML = "Hoa hồng nhận được là: " + commission;
+      }
+    </script>
+    
+</body>
+</html>
