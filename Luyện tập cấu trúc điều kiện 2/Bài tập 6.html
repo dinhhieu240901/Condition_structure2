@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="soA" placeholder="Nhập số a" />
+    <input type="text" id="soB" placeholder="Nhập số b" />
+    <button onclick="solveEquation()">Giải phương trình</button>
+    <p id="result"></p>
+    <script>
+      //   function solveEquation() {
+      //     let a = +document.getElementById("soA").value;
+      //     let b = +document.getElementById("soB").value;
+      //     let result;
+      //     if (a === 0) {
+      //       result =
+      //         b === 0 ? "Phương trình vô số nghiệm" : "Phương trình vô nghiệm";
+      //     } else {
+      //       result = "Phương trình có nghiệm x = " + -b / a;
+      //     }
+      //     document.getElementById("result").innerHTML = result;
+      //   }
+      function solveEquation() {
+        let a = +document.getElementById("soA").value;
+        let b = +document.getElementById("soB").value;
+        let x;
+        if (a == 0) {
+          document.getElementById("result").innerHTML =
+            "Phương trình vô nghiệm";
+        } else if (b == 0) {
+          document.getElementById("result").innerHTML =
+            "Phương trình vô số nghiệm";
+        } else {
+          x = -b / a;
+          document.getElementById("result").innerHTML =
+            "Phương trình có nghiệm là:" + x;
+        }
+      }
+    </script>
+  </body>
+</html>

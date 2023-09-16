@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="met" placeholder="Nhập số mét" />
+    <button onclick="chuyensangFT()">Convert</button>
+    <p id="result"></p>
+    <script>
+      function chuyensangFT() {
+        let met = +document.getElementById("met").value;
+        let ft = met * 3.2808;
+        document.getElementById("result").innerHTML =
+          "giá trị của feet sau khi chuyển là: " + ft;
+      }
+    </script>
+  </body>
+</html>

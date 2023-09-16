@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="canhA" id="canhA" placeholder="Nhập cạnh kề a" />
+    <input type="text" name="canhB" id="canhB" placeholder="Nhập cạnh kề b" />
+    <button onclick="areaRightTriangle()">Kết quả</button>
+    <p id="result"></p>
+    <script>
+      function areaRightTriangle() {
+        let a = +document.getElementById("canhA").value;
+        let b = +document.getElementById("canhB").value;
+        let area = (a * b) / 2;
+        document.getElementById("result").innerHTML =
+          "Diện tích tam giác vuông là " + area;
+      }
+    </script>
+  </body>
+</html>
